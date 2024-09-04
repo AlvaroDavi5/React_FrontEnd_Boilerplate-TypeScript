@@ -1,0 +1,287 @@
+{
+	"editor.inlineSuggest.enabled": true,
+	"editor.suggestSelection": "first",
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 15,
+	"editor.fontWeight": "400",
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.wordWrap": "off",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.pasteAs.enabled": false,
+	"editor.pasteAs.showPasteSelector": "never",
+	"editor.stickyScroll.enabled": false,
+	"editor.autoClosingBrackets": "always",
+	"editor.defaultFormatter": "vscode.typescript-language-features",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "never"
+	},
+	"editor.unicodeHighlight.invisibleCharacters": false,
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"explorer.autoReveal": true,
+	"explorer.confirmDragAndDrop": false,
+	"scm.defaultViewMode": "tree",
+	"scm.showHistoryGraph": false,
+	"workbench.productIconTheme": "material-product-icons",
+	"workbench.sideBar.location": "left",
+	"workbench.tree.indent": 15,
+	"workbench.colorTheme": "Dracula Theme",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.editor.restoreViewState": true,
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+	"security.workspace.trust.untrustedFiles": "open",
+	"extensions.closeExtensionDetailsOnViewChange": false,
+	"extensions.ignoreRecommendations": true,
+	"sync.gist": "31d051020e1fe66435b53f28a0ed30ee",
+	"sync.forceUpload": true,
+	"sync.quietSync": true,
+	"sync.forceDownload": true,
+	"sync.autoUpload": true,
+	"sync.autoDownload": true,
+	"bracket-pair-colorizer-2.depreciation-notice": false,
+	"bookmarks.saveBookmarksInProject": false,
+	"powermode.enabled": true,
+	"powermode.presets": "flames",
+	"powermode.combo.location": "editor",
+	"powermode.shake.enabled": false,
+	"material-icon-theme.activeIconPack": "react",
+	"vsicons.presets.tsOfficial": true,
+	"vsicons.presets.jsOfficial": true,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"vsintellicode.features.python.deepLearning": "enabled",
+	"editorconfig.generateAuto": true,
+	"editorconfig.template": "default",
+	"eslint.format.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"debug.allowBreakpointsEverywhere": true,
+	"debug.console.closeOnEnd": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"tabnine.experimentalAutoImports": true,
+	"git.autofetch": true,
+	"git.enableSmartCommit": true,
+	"git.openRepositoryInParentFolders": "always",
+	"git-graph.repository.commits.fetchAvatars": true,
+	"gitlens.defaultDateFormat": null,
+	"gitlens.views.remotes.branches.layout": "list",
+	"gitlens.views.tags.branches.layout": "list",
+	"gitlens.views.branches.branches.layout": "list",
+	"gitlens.plusFeatures.enabled": true,
+	"gitlens.menus": {
+		"editor": {
+			"blame": false,
+			"clipboard": true,
+			"compare": false,
+			"history": false,
+			"remote": false
+		},
+		"editorGroup": {
+			"blame": true,
+			"compare": true
+		},
+		"editorTab": {
+			"clipboard": true,
+			"compare": false,
+			"history": false,
+			"remote": false
+		},
+		"explorer": {
+			"clipboard": true,
+			"compare": true,
+			"history": false,
+			"remote": true
+		},
+		"scm": {
+			"graph": false,
+			"authors": true
+		},
+		"scmRepositoryInline": {
+			"graph": false
+		},
+		"scmRepository": {
+			"authors": true,
+			"graph": false
+		},
+		"scmGroupInline": {
+			"stash": true
+		},
+		"scmGroup": {
+			"compare": true,
+			"openClose": true,
+			"stash": true
+		},
+		"scmItemInline": {
+			"stash": false
+		},
+		"scmItem": {
+			"clipboard": true,
+			"compare": true,
+			"history": true,
+			"remote": false,
+			"stash": true
+		}
+	},
+	"docker.images.groupBy": "RepositoryName",
+	"docker.images.sortBy": "Label",
+	"docker.containers.groupBy": "Compose Project Name",
+	"docker.containers.sortBy": "Label",
+	"debug.onTaskErrors": "debugAnyway",
+	"problems.showCurrentInStatus": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.suggest.autoImports": true,
+	"javascript.suggestionActions.enabled": true,
+	"typescript.suggest.autoImports": true,
+	"typescript.suggestionActions.enabled": true,
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.tsserver.maxTsServerMemory": 1536,
+	"typescript.tsserver.watchOptions": {},
+	"github.copilot.enable": {
+		"*": true,
+		"yaml": true,
+		"plaintext": false,
+		"markdown": true,
+		"java": true
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[dockercompose]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"color-highlight.languages": [
+		"*"
+	],
+	"color-highlight.hslWithNoFunctionLanguages": [
+		"*"
+	],
+	"better-comments.multilineComments": true,
+	"better-comments.highlightPlainText": false,
+	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#ff3117",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "?",
+			"color": "#2da1f1",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "//",
+			"color": "#5b5a5a",
+			"strikethrough": true,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "todo",
+			"color": "#f1d113",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "*",
+			"color": "#8fbd6e",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		}
+	],
+	"commentAnchors.tags.matchCase": true,
+	"commentAnchors.tags.anchors": {
+		"ANCHOR": {
+			"iconColor": "#ffdbfe",
+			"highlightColor": "#ffdbfe",
+			"scope": "file"
+		},
+		"TODO": {
+			"iconColor": "orange",
+			"highlightColor": "#ffb300",
+			"scope": "workspace"
+		},
+		"FIXME": {
+			"iconColor": "red",
+			"highlightColor": "#f44336",
+			"scope": "workspace"
+		},
+		"STUB": {
+			"iconColor": "purple",
+			"highlightColor": "#ba68c8",
+			"scope": "file"
+		},
+		"NOTE": {
+			"iconColor": "blue",
+			"highlightColor": "#47acff",
+			"scope": "file"
+		},
+		"REVIEW": {
+			"iconColor": "green",
+			"highlightColor": "#64dd17",
+			"scope": "workspace"
+		},
+		"SECTION": {
+			"iconColor": "blurple",
+			"highlightColor": "#3811ff",
+			"scope": "workspace",
+			"behavior": "region"
+		},
+		"LINK": {
+			"iconColor": "#2ecc71",
+			"highlightColor": "#2ecc71",
+			"scope": "workspace",
+			"behavior": "link"
+		}
+	},
+	"files.associations": {
+		"*.apib": "apiblueprint",
+		"*.dbml": "dbml",
+		"*.rmd": "markdown"
+	},
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"/package.json"
+			],
+			"url": "https://json.schemastore.org/package",
+			"schema": true
+		}
+	],
+	"http.proxy": "",
+	"http.proxySupport": "off",
+	"http.proxyAuthorization": null,
+	"http.proxyStrictSSL": false
+}
