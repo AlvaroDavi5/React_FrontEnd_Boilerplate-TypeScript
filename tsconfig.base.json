@@ -138,12 +138,12 @@
 		"scripts",
 		"tests",
 		"**/*.test.ts",
-		"**/*.spec.ts",
 		"**/*.test.tsx",
-		"**/*.spec.tsx",
 		"**/*.test.js",
-		"**/*.spec.js",
 		"**/*.test.jsx",
+		"**/*.spec.ts",
+		"**/*.spec.tsx",
+		"**/*.spec.js",
 		"**/*.spec.jsx"
 	],
 	"ts-node": {
