@@ -22,7 +22,7 @@ Description of the functionality and main decisions made
 - [ ] Typecheck and build passed  
 - [ ] Security check passed  
 - [ ] Already in development and test branches  
-- [ ] Tested affected requests or connections  
+- [ ] Tested affected pages, components, requests or connections  
 - [ ] Implemented and approved tests  
 - [ ] Added GitHub labels for PR/Issues  
 - [ ] Code owners marked for review  
