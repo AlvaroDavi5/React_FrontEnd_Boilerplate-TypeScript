@@ -20,7 +20,8 @@
 			"DOM.Iterable"
 		],
 		"types": [
-			"node"
+			"node",
+			"jest"
 		],
 		"jsx": "preserve",
 		"experimentalDecorators": true,
@@ -152,6 +153,8 @@
 		]
 	},
 	"typeAcquisition": {
-		"include": []
+		"include": [
+			"jest"
+		]
 	}
 }
