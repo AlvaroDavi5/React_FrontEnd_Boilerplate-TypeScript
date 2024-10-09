@@ -1,0 +1,70 @@
+
+# --------- ignore ---------
+
+# dependencies
+node_modules/
+package-lock.json
+.pnp/
+.pnp.js
+# build and output
+build/
+dist/
+.next/
+.angular/
+.sass-cache/
+out-tsc/
+bazel-out/
+*.tsbuildinfo
+# deploy
+.vercel
+# debug and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+**/npm-debug.log
+logs/
+*.log
+# testing
+coverage/
+tests/database.sqlite/
+# sonar
+test-report.xml
+.scannerwork/
+# misc
+.DS_Store
+*.pem
+# dotenv files
+.env*
+envs/
+# files extensions
+*.docx
+*.xlsx
+# test files
+*.test.js.snap
+**/__snapshots__
+# Docker files
+.docker/
+# IDE and ASDF settings
+.vscode/*
+.idea/*
+.history/*
+.project
+.classpath
+.c9/
+*.launch
+.settings/*
+*.sublime-workspace
+.tool-versions
+# others
+TODO*.txt
+temp/
+tmp/
+
+# --------- except ---------
+
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+!TODO-example.txt
