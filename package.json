@@ -36,7 +36,6 @@
 		"typecheck": "tsc --project tsconfig.json --noEmit",
 		"build": "next build",
 		"start": "cross-env NODE_PATH=. next start",
-		"start:prod": "next start",
 		"start:dev": "cross-env NODE_PATH=. NODE_ENV=dev next dev",
 		"security-check": "node ./scripts/security-check.js",
 		"mock-dependencies": "cross-env NODE_PATH=. ts-node --project tsconfig.json ./scripts/mock-dependencies.ts",
