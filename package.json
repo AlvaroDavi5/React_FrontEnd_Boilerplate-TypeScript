@@ -35,8 +35,8 @@
 	"scripts": {
 		"typecheck": "tsc --project tsconfig.json --noEmit",
 		"build": "next build",
-		"start": "cross-env NODE_PATH=. next start",
-		"start:dev": "cross-env NODE_PATH=. NODE_ENV=dev next dev",
+		"start": "cross-env NODE_PATH=. next start -p 3001",
+		"start:dev": "cross-env NODE_PATH=. NODE_ENV=dev next dev -p 3001",
 		"security-check": "node ./scripts/security-check.js",
 		"mock-dependencies": "cross-env NODE_PATH=. ts-node --project tsconfig.json ./scripts/mock-dependencies.ts",
 		"test": "cross-env NODE_ENV=test jest -c jest.config.js",
