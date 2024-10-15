@@ -13,7 +13,7 @@
 		// "disableSolutionSearching": true,
 		// "disableReferencedProjectLoad": true,
 		/* Language and Environment */
-		"target": "ES2020",
+		"target": "ES5",
 		"lib": [
 			"ESNext",
 			"DOM",
