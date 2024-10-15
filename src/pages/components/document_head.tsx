@@ -44,7 +44,6 @@ export default function DocumentHead(props: PropsInteface) {
 			<link rel='manifest' href='/static/manifest.json' />
 			<link rel='mask-icon' href='/static/icons/safari-pinned-tab.svg' color='#5bbad5' />
 			<link rel='shortcut icon' href='/favicon.ico' />
-			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
 
 			<meta property='og:type' content='website' />
 			<meta property='og:title' content='PWA App' />

@@ -52,6 +52,9 @@
 			"@pages/*": [
 				"src/pages/*"
 			],
+			"@shared/*": [
+				"src/shared/*"
+			],
 			"@dev/*": [
 				"src/dev/*"
 			]
