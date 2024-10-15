@@ -1,8 +1,7 @@
-import 'regenerator-runtime/runtime'
-import type { AppProps } from 'next/app'
-import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react'
-import theme from '@configs/layout/themes'
-import './styles/globals.css'
+import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react';
+import theme from '@configs/layout/themes';
+import type { AppProps } from 'next/app';
+import './styles/globals.css';
 
 
 export default function AppRoot({ Component, pageProps }: AppProps) {
@@ -16,5 +15,5 @@ export default function AppRoot({ Component, pageProps }: AppProps) {
 				{/* </AuthProvider> */}
 			</ColorModeProvider>
 		</ChakraProvider>
-	)
+	);
 }

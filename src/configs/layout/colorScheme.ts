@@ -1,24 +1,24 @@
 
 const dark = {
-	title: "Dark",
+	title: 'Dark',
 
 	colors: {
-		primary: "#229052",
-		secondary: "#03652e",
+		primary: '#229052',
+		secondary: '#03652e',
 
-		background: "#015249",
-		text: "#000000"
+		background: '#015249',
+		text: '#000000'
 	}
 };
 const light = {
-	title: "Light",
+	title: 'Light',
 
 	colors: {
-		primary: "#57bc90",
-		secondary: "#77c9d4",
+		primary: '#57bc90',
+		secondary: '#77c9d4',
 
-		background: "#aef0d1",
-		text: "#ffffff"
+		background: '#aef0d1',
+		text: '#ffffff'
 	}
 };
 
@@ -36,6 +36,6 @@ const colors = {
 	danger: '#e60e0e',
 	alert: '#e9bd09',
 	calm: '#0a9ef3'
-}
+};
 
 export { colors };

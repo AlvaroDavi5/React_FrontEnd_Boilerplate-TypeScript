@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 
 interface PropsInteface {
@@ -10,12 +10,12 @@ export default function DocumentHead(props: PropsInteface) {
 		<Head>
 			<title>{`${props.title} - Boilerplate`}</title>
 			<meta name='application-name' content='Boilerplate' />
-			<meta name="description" content="Webapp para organização de projetos, tarefas e consulta a acervos e catálogos." />
-			<link rel="icon" href="/favicon.ico" />
+			<meta name='description' content='Webapp para organização de projetos, tarefas e consulta a acervos e catálogos.' />
+			<link rel='icon' href='/favicon.ico' />
 			<meta name='theme-color' content='#000000' />
-			<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
-			<link rel="manifest" href="manifest.json" />
-			<link rel="manifest" href="manifest.webmanifest" />
+			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
+			<link rel='manifest' href='manifest.json' />
+			<link rel='manifest' href='manifest.webmanifest' />
 
 			<meta name='apple-mobile-web-app-capable' content='yes' />
 			<meta name='apple-mobile-web-app-status-bar-style' content='default' />
@@ -52,7 +52,7 @@ export default function DocumentHead(props: PropsInteface) {
 			<meta property='og:site_name' content='PWA App' />
 			<meta property='og:url' content='https://yourdomain.com' />
 			<meta property='og:image' content='https://yourdomain.com/static/icons/apple-touch-icon.png' />
-			<meta httpEquiv="X-UA-Compatible" content="ie=edge,chrome-1" />
+			<meta httpEquiv='X-UA-Compatible' content='ie=edge,chrome-1' />
 		</Head>
-	)
+	);
 }

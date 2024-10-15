@@ -1,9 +1,11 @@
-import { extendTheme } from '@chakra-ui/react'
-import { mode, darken, whiten } from '@chakra-ui/theme-tools'
+/* eslint-disable import/no-extraneous-dependencies */
+import { extendTheme } from '@chakra-ui/react';
+import { mode, darken, whiten } from '@chakra-ui/theme-tools';
 import { colors } from './colorScheme';
+/* eslint-enable import/no-extraneous-dependencies */
 
 
-const fonts = { mono: `'Menlo', monospace` };
+const fonts = { mono: '\'Menlo\', monospace' };
 
 const breakpoints = {
 	sm: '40em',
@@ -31,7 +33,7 @@ const buttonStyles = {
 	},
 	// default values for `size` and `variant`
 	defaultProps: {},
-}
+};
 
 const theme = extendTheme(
 	{
@@ -50,6 +52,6 @@ const theme = extendTheme(
 			search: {},
 		},
 	}
-)
+);
 
 export default theme;

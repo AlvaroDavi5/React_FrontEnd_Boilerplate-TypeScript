@@ -1,5 +1,5 @@
-import { Box } from '@chakra-ui/react'
-import DocumentHead from '@pages/components/document_head'
+import { Box } from '@chakra-ui/react';
+import DocumentHead from '@pages/components/document_head';
 
 
 export default function AppIndex() {
@@ -12,5 +12,5 @@ export default function AppIndex() {
 				</Box>
 			</main>
 		</>
-	)
+	);
 }
