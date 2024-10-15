@@ -117,7 +117,7 @@
 		// "allowUnreachableCode": true,
 		/* Completeness */
 		// "skipDefaultLibCheck": true,
-		"skipLibCheck": false,
+		"skipLibCheck": true,
 		"pretty": true,
 		"plugins": [
 			{
