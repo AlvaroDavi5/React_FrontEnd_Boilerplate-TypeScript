@@ -46,11 +46,17 @@
 			"@dev/*": [
 				"src/dev/*"
 			],
+			"@app/*": [
+				"src/app/*"
+			],
 			"@pages/*": [
-				"src/modules/pages/*"
+				"src/pages/*"
 			],
 			"@components/*": [
-				"src/modules/components/*"
+				"src/components/*"
+			],
+			"@configs/*": [
+				"src/configs/*"
 			],
 			"@shared/*": [
 				"src/shared/*"
