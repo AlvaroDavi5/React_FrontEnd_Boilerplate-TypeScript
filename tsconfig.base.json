@@ -43,23 +43,17 @@
 			"tests"
 		],
 		"paths": {
-			"@dev/*": [
-				"src/dev/*"
-			],
-			"@app/*": [
-				"src/app/*"
-			],
-			"@pages/*": [
-				"src/pages/*"
+			"@configs/*": [
+				"src/configs/*"
 			],
 			"@components/*": [
 				"src/components/*"
 			],
-			"@configs/*": [
-				"src/configs/*"
+			"@pages/*": [
+				"src/pages/*"
 			],
-			"@shared/*": [
-				"src/shared/*"
+			"@dev/*": [
+				"src/dev/*"
 			]
 		},
 		// "typeRoots": [],
