@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime'
-import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
+import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react'
 import theme from '@configs/layout/themes'
 import './styles/globals.css'
 
