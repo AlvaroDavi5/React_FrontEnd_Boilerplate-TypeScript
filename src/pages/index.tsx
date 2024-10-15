@@ -6,11 +6,11 @@ export default function AppIndex() {
 	return (
 		<>
 			<DocumentHead title='HomePage' />
-			<body>
+			<main>
 				<Box >
 					Oi
 				</Box>
-			</body>
+			</main>
 		</>
 	)
 }
