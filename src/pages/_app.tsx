@@ -1,5 +1,6 @@
 import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react';
 import theme from '@configs/layout/themes';
+import AuthProvider from '@pages/auth/AuthContext';
 import type { AppProps } from 'next/app';
 import './styles/globals.css';
 
@@ -9,10 +10,9 @@ export default function AppRoot({ Component, pageProps }: AppProps) {
 		<ChakraProvider resetCSS theme={theme}>
 			<ColorModeScript />
 			<ColorModeProvider options={{}}>
-				{/* TODO - add AuthProvider */}
-				{/* <AuthProvider> */}
-				<Component {...pageProps} />
-				{/* </AuthProvider> */}
+				<AuthProvider>
+					<Component {...pageProps} />
+				</AuthProvider>
 			</ColorModeProvider>
 		</ChakraProvider>
 	);
