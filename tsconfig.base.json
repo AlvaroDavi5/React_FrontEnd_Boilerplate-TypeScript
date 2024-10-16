@@ -46,6 +46,9 @@
 			"@configs/*": [
 				"src/configs/*"
 			],
+			"@common/*": [
+				"src/common/*"
+			],
 			"@components/*": [
 				"src/components/*"
 			],
