@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"module": "CommonJS"
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.js",
+		"src/**/*.jsx",
+		"next-env.d.ts",
+		".next/types/**/*.ts",
+		"scripts/**/*.ts",
+		"scripts/**/*.js",
+		"tests/**/*.ts",
+		"tests/**/*.tsx",
+		"tests/**/*.js",
+		"tests/**/*.jsx"
+	],
+	"exclude": [
+		"node_modules",
+		"build"
+	]
+}
