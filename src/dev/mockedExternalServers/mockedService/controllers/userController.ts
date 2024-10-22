@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { encodeJwt } from '@common/token';
+import { encodeJwtAsync } from '@common/token';
 
 
 export default {
@@ -14,7 +14,7 @@ export default {
 
 		try {
 			const data = {
-				token: await encodeJwt(user, '1d'),
+				token: await encodeJwtAsync(user, '1d'),
 				...user,
 			};
 

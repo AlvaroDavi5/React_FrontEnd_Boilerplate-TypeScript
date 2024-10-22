@@ -1,9 +1,9 @@
-import { SignJWT, jwtVerify, JWTPayload } from 'jose';
+import { SignJWT, jwtVerify, JWTPayload, decodeJwt } from 'jose';
 
 
 const secret = new TextEncoder().encode(process.env.NEXT_PUBLIC_TOKEN_SECRET ?? '');
 
-export async function encodeJwt<PT extends object = any>(payload: PT, expiration = '7d'): Promise<string> {
+export async function encodeJwtAsync<PT extends object = any>(payload: PT, expiration = '7d'): Promise<string> {
 	const jwt = await new SignJWT(payload as JWTPayload)
 		.setProtectedHeader({ alg: 'HS256' })
 		.setExpirationTime(expiration)
@@ -12,10 +12,7 @@ export async function encodeJwt<PT extends object = any>(payload: PT, expiration
 	return jwt;
 }
 
-export async function decodeJwt(token: string): Promise<{
-	content: JWTPayload | string | null,
-	invalidSignature: boolean, expired: boolean,
-}> {
+export async function decodeJwtAsync(token: string): Promise<{ content: JWTPayload | string | null, invalidSignature: boolean, expired: boolean }> {
 	try {
 		const { payload } = await jwtVerify(token, secret, {
 			algorithms: ['HS256']
@@ -44,3 +41,16 @@ export async function decodeJwt(token: string): Promise<{
 		};
 	}
 }
+
+export async function validateTokenAsync(token: string): Promise<{ valid: boolean, content: any }> {
+	const { content, expired, invalidSignature } = await decodeJwtAsync(token);
+
+	return {
+		content,
+		valid: !invalidSignature && !expired,
+	}
+};
+
+export function decode(token: string): any {
+	return decodeJwt(token);
+};
