@@ -6,17 +6,22 @@ import {
 	useColorModeValue,
 	Box, Flex, Button,
 	Input, InputGroup, InputRightElement,
-	FormLabel, FormControl, FormHelperText
+	FormLabel, FormControl, FormHelperText,
+	useToast
 } from '@chakra-ui/react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import DocumentHead from '@pages/components/document_head';
 import MinNavbar from '@pages/components/min_navbar';
 import { AuthContext, SignInProps } from '@pages/auth/AuthContext';
+import ToastMessagesConstants from '@configs/constants/ToastMessages.constants';
+import axios from 'axios';
+import { getToken, saveToken } from '@common/cookies';
+import { decodeJwt } from '@common/token';
 
 
 export default function Login() {
+	const { isAuthenticated, setAuthUser, setIsAuthenticated } = useContext(AuthContext);
 	const router = useRouter();
-	const { SignIn, isAuthenticated } = useContext(AuthContext);
 
 	useEffect(() => {
 		if (isAuthenticated)
@@ -26,16 +31,73 @@ export default function Login() {
 	const colorMode = useColorModeValue('light', 'dark');
 	const pageBgColor = (colorMode === 'light' ? 'clear_lake' : 'dark_forest');
 	const boxBgColor = (colorMode === 'light' ? 'marine' : 'primary');
+	const toast = useToast();
 	const { register, handleSubmit } = useForm<SignInProps, undefined, SignInProps>();
 	const [loadingSubmitButton, setLoadingSubmitButton] = useState(false);
 	const [showPass, setShowPass] = useState(false);
 	const handleShowPass = () => { setShowPass(!showPass); };
 
-	async function handleSignIn(data: SignInProps): Promise<void> {
-		setLoadingSubmitButton(true);
+	// REVIEW - use react query
+	async function SignIn({ email = '', password = '' }: SignInProps): Promise<boolean> {
+		const axiosClient = axios.create({ baseURL: `${process.env.MOCKED_SERVICE_URL}` });
 
-		const logged = await SignIn(data);
-		setLoadingSubmitButton(logged);
+		const validateToken = async (token: string) => {
+			const { content, expired, invalidSignature } = await decodeJwt(token);
+
+			if (!invalidSignature && !expired) {
+				setIsAuthenticated(true);
+				setAuthUser(content as any);
+			}
+		};
+
+		try {
+			const existentToken = getToken();
+
+			if (!!existentToken?.length) {
+				await validateToken(existentToken);
+			} else {
+				const { data: loggedUser } = await axiosClient.put(`http://localhost:4000/api/users/`, {
+					email,
+					password,
+				});
+
+				saveToken(loggedUser.token);
+				await validateToken(getToken());
+			}
+		} catch (error) {
+			console.error(error);
+			setIsAuthenticated(false);
+		}
+
+		return isAuthenticated;
+	}
+	async function handleSignIn(data: SignInProps): Promise<void> {
+		const { loginToasts: { success: successToast, error: errorToast } } = new ToastMessagesConstants();
+
+		setLoadingSubmitButton(true);
+		const signed = await SignIn(data);
+
+		if (signed) {
+			toast({
+				status: successToast.status as any,
+				title: successToast.title,
+				description: successToast.description,
+				duration: 1500,
+				isClosable: true,
+			});
+
+			router.push('/home');
+		} else {
+			toast({
+				status: errorToast.status as any,
+				title: errorToast.title,
+				description: errorToast.description,
+				duration: 1500,
+				isClosable: true,
+			});
+
+			setLoadingSubmitButton(false);
+		}
 	}
 
 	return (
@@ -77,9 +139,9 @@ export default function Login() {
 										<FormLabel htmlFor='email' marginLeft='15px'>e-Mail:</FormLabel>
 										<InputGroup>
 											<Input
-												type='email' {...register('email')}
-												placeholder='Ex: nome.sobrenome@gmail.com'
-												maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
+												type='email' {...register('email')} isRequired={true}
+												placeholder='Ex: nome.sobrenome@gmail.com' _placeholder={{ color: 'gray.500' }}
+												color='black' maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
 											/>
 										</InputGroup>
 										<Link href='/auth/register' passHref>
@@ -99,13 +161,13 @@ export default function Login() {
 										<FormLabel htmlFor='password' marginLeft='15px'>Senha:</FormLabel>
 										<InputGroup>
 											<Input
-												type={showPass ? 'text' : 'password'} {...register('password')}
-												placeholder='Jamais compartilhe sua senha!'
-												maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
+												type={showPass ? 'text' : 'password'} {...register('password')} isRequired={true}
+												placeholder='Jamais compartilhe sua senha!' _placeholder={{ color: 'gray.500' }}
+												color='black' maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
 											/>
 											<InputRightElement width='72px' display={['none', 'flex']}>
 												<Button onClick={handleShowPass} h='28px' size='sm' background='green.100'>
-													{showPass ? <FaEyeSlash size='20' /> : <FaEye size='20' />}
+													{showPass ? <FaEyeSlash size='20' color='black' /> : <FaEye size='20' color='black' />}
 												</Button>
 											</InputRightElement>
 										</InputGroup>

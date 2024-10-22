@@ -1,16 +1,22 @@
-import { Box } from '@chakra-ui/react';
-import DocumentHead from '@pages/components/document_head';
+import { useContext, useEffect, ReactElement } from 'react';
+import { useRouter } from 'next/router';
+import { AuthContext } from './auth/AuthContext';
+import Login from './auth/login';
 
 
-export default function AppIndex() {
+export default function AppIndex(): ReactElement {
+	const { isAuthenticated } = useContext(AuthContext);
+	const router = useRouter();
+
+	useEffect(() => {
+		// TODO - get token
+		if (!isAuthenticated)
+			router.push('/auth/login');
+		else
+			router.push('/home');
+	}, []);
+
 	return (
-		<>
-			<DocumentHead title='HomePage' />
-			<main>
-				<Box >
-					Oi
-				</Box>
-			</main>
-		</>
+		<Login />
 	);
 }
