@@ -15,69 +15,33 @@ import MinNavbar from '@pages/components/min_navbar';
 import { AuthContext, SignInProps } from '@pages/auth/AuthContext';
 import ToastMessagesConstants from '@configs/constants/ToastMessages.constants';
 import axios from 'axios';
-import { getToken, saveToken } from '@common/cookies';
-import { decodeJwt } from '@common/token';
+import { saveToken } from '@common/cookies';
+import { validateTokenAsync } from '@common/token';
 
 
 export default function Login() {
-	const { isAuthenticated, setAuthUser, setIsAuthenticated } = useContext(AuthContext);
+	const { isAuthenticated, setIsAuthenticated, setAuthUser } = useContext(AuthContext);
 	const router = useRouter();
+	const toast = useToast();
+	const [showPass, setShowPass] = useState(false);
+	const { register, handleSubmit, formState: { isSubmitting } } = useForm<SignInProps, undefined, SignInProps>();
+	const [loadingSubmitButton, setLoadingSubmitButton] = useState(false);
 
 	useEffect(() => {
 		if (isAuthenticated)
-			router.push('/home');
-	}, []);
+			router.push('/');
+
+		setLoadingSubmitButton(isSubmitting);
+	}, [isAuthenticated, isSubmitting]);
 
 	const colorMode = useColorModeValue('light', 'dark');
 	const pageBgColor = (colorMode === 'light' ? 'clear_lake' : 'dark_forest');
 	const boxBgColor = (colorMode === 'light' ? 'marine' : 'primary');
-	const toast = useToast();
-	const { register, handleSubmit } = useForm<SignInProps, undefined, SignInProps>();
-	const [loadingSubmitButton, setLoadingSubmitButton] = useState(false);
-	const [showPass, setShowPass] = useState(false);
-	const handleShowPass = () => { setShowPass(!showPass); };
 
-	// REVIEW - use react query
-	async function SignIn({ email = '', password = '' }: SignInProps): Promise<boolean> {
-		const axiosClient = axios.create({ baseURL: `${process.env.MOCKED_SERVICE_URL}` });
-
-		const validateToken = async (token: string) => {
-			const { content, expired, invalidSignature } = await decodeJwt(token);
-
-			if (!invalidSignature && !expired) {
-				setIsAuthenticated(true);
-				setAuthUser(content as any);
-			}
-		};
-
-		try {
-			const existentToken = getToken();
-
-			if (!!existentToken?.length) {
-				await validateToken(existentToken);
-			} else {
-				const { data: loggedUser } = await axiosClient.put(`http://localhost:4000/api/users/`, {
-					email,
-					password,
-				});
-
-				saveToken(loggedUser.token);
-				await validateToken(getToken());
-			}
-		} catch (error) {
-			console.error(error);
-			setIsAuthenticated(false);
-		}
-
-		return isAuthenticated;
-	}
-	async function handleSignIn(data: SignInProps): Promise<void> {
+	const handleToasts = (success: boolean): void => {
 		const { loginToasts: { success: successToast, error: errorToast } } = new ToastMessagesConstants();
 
-		setLoadingSubmitButton(true);
-		const signed = await SignIn(data);
-
-		if (signed) {
+		if (success) {
 			toast({
 				status: successToast.status as any,
 				title: successToast.title,
@@ -85,8 +49,6 @@ export default function Login() {
 				duration: 1500,
 				isClosable: true,
 			});
-
-			router.push('/home');
 		} else {
 			toast({
 				status: errorToast.status as any,
@@ -95,9 +57,33 @@ export default function Login() {
 				duration: 1500,
 				isClosable: true,
 			});
-
-			setLoadingSubmitButton(false);
 		}
+	};
+	const handleShowPass = (): void => { setShowPass(!showPass); };
+
+	const signIn = async ({ email = '', password = '' }: SignInProps): Promise<{ validToken: boolean, content: any }> => {
+		try {
+			const axiosClient = axios.create({ baseURL: `${process.env.MOCKED_SERVICE_URL}` });
+
+			const { data: loggedUser } = await axiosClient.put(`/api/users/`, {
+				email,
+				password,
+			});
+			const token = loggedUser.token;
+
+			saveToken(token);
+			const { valid: validToken, content } = await validateTokenAsync(token);
+			return { validToken, content };
+		} catch (error) {
+			console.error(error);
+			return { validToken: false, content: null };
+		}
+	}
+	const handleSignIn = async (data: SignInProps): Promise<void> => {
+		const { validToken, content } = await signIn(data);
+		handleToasts(validToken);
+		setIsAuthenticated(validToken);
+		setAuthUser(content);
 	}
 
 	return (
