@@ -4,6 +4,9 @@
 /* eslint-disable import/unambiguous */
 const nextConfig = {
 	reactStrictMode: true,
+	env: {
+		MOCKED_SERVICE_URL: process.env.MOCKED_SERVICE_URL,
+	},
 };
 /* eslint-enable import/unambiguous */
 
