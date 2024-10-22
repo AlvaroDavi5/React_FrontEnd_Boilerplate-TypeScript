@@ -13,8 +13,8 @@ export const AuthContext = createContext<{
 	authUser?: UserAuthInterface, setAuthUser: (input: UserAuthInterface) => void
 		}>({
 			isAuthenticated: false,
-			setIsAuthenticated: () => { },
-			setAuthUser: () => { },
+			setIsAuthenticated: () => {  },
+			setAuthUser: () => {  },
 		});
 
 export default function AuthProvider({ children }: { children: ReactElement }): ReactElement {

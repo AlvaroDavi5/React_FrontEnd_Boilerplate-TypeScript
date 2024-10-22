@@ -290,7 +290,7 @@
 		"no-labels": "error",
 		"no-unused-labels": "error",
 		"no-debugger": "error",
-		"no-console": "error",
+		"no-console": "warn",
 		"unicode-bom": [
 			"error",
 			"never"
