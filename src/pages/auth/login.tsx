@@ -65,11 +65,11 @@ export default function Login() {
 		try {
 			const axiosClient = axios.create({ baseURL: `${process.env.MOCKED_SERVICE_URL}` });
 
-			const { data: loggedUser } = await axiosClient.put(`/api/users/`, {
+			const { data: loggedUser } = await axiosClient.put('/api/users/', {
 				email,
 				password,
 			});
-			const token = loggedUser.token;
+			const { token } = loggedUser;
 
 			saveToken(token);
 			const { valid: validToken, content } = await validateTokenAsync(token);
@@ -78,13 +78,13 @@ export default function Login() {
 			console.error(error);
 			return { validToken: false, content: null };
 		}
-	}
+	};
 	const handleSignIn = async (data: SignInProps): Promise<void> => {
 		const { validToken, content } = await signIn(data);
 		handleToasts(validToken);
 		setIsAuthenticated(validToken);
 		setAuthUser(content);
-	}
+	};
 
 	return (
 		<>

@@ -65,11 +65,16 @@ ___
 
 [React.js](https://react.dev/reference/react)
 [Next.js](https://nextjs.org/docs)
+- **Style**
+	- [ ] Separate states, effects, contexts, consts, render/return
 - **Concepts**
 	* Rendering
 		- [ ] Static Site Generation
 		- [ ] Client-Side Rendering
+			- Client-side Fetching
 		- [ ] Server-Side Rendering
+			- getStaticProps
+			- getServerSideProps
 	* Components
 		- [ ] Form
 		- [ ] NavBar
@@ -80,7 +85,6 @@ ___
 		- [ ] Header
 		- [ ] Scroller
 	* Actions
-		- [ ] Routing
 		- [ ] Validations
 		- [ ] Requests (Http & GraphQl)
 		- [ ] Connections (WebSockets)

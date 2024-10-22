@@ -48,9 +48,9 @@ export async function validateTokenAsync(token: string): Promise<{ valid: boolea
 	return {
 		content,
 		valid: !invalidSignature && !expired,
-	}
-};
+	};
+}
 
 export function decode(token: string): any {
 	return decodeJwt(token);
-};
+}
