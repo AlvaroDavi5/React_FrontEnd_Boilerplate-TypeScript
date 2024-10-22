@@ -1,7 +1,14 @@
+import { ReactElement } from 'react';
 import { Box, Image, useColorModeValue } from '@chakra-ui/react';
 
 
-export default function HomePageCard(props: any): JSX.Element {
+interface CardPropos {
+	children: string,
+	pageHref: string,
+	imgSource: string,
+}
+
+export default function HomePageCard(props: CardPropos): ReactElement {
 	const colorMode = useColorModeValue('light', 'dark');
 	const boxBgColor = (colorMode === 'light' ? 'marine' : 'primary');
 

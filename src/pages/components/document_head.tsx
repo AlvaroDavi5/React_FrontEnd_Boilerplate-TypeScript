@@ -1,11 +1,11 @@
 import Head from 'next/head';
 
 
-interface PropsInteface {
+interface HeadProps {
 	title?: string,
 }
 
-export default function DocumentHead(props: PropsInteface) {
+export default function DocumentHead(props: HeadProps) {
 	return (
 		<Head>
 			<title>{`${props.title} - Boilerplate`}</title>
