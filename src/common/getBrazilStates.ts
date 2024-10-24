@@ -9,8 +9,7 @@ function readJSONFile(filePath: string): any {
 export async function getAllBrazilStates(): Promise<any[]> {
 	try {
 		return readJSONFile('src/common/templates/brazilStates.json');
-	}
-	catch (error: unknown) {
+	} catch (error: unknown) {
 		return [];
 	}
 }

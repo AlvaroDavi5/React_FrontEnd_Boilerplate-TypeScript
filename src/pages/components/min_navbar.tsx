@@ -32,7 +32,7 @@ export default function MinNavbar(props: any): ReactElement {
 			<div
 				className='logo'
 			>
-				<Link href='https://github.com/AlvaroDavi5' passHref
+				<Link href='/' passHref
 				>
 					<IconButton
 						aria-label='GitHub'

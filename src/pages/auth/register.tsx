@@ -11,9 +11,9 @@ import { FaEye, FaEyeSlash, FaUserCircle } from 'react-icons/fa';
 import axios from 'axios';
 import { EndpointInterface, PagePropsInterface } from '@shared/internal/interfaces/nextRoutesInterface';
 import ToastMessagesConstants from '@configs/constants/ToastMessages.constants';
+import { getAllBrazilStates } from '@common/getBrazilStates';
 import DocumentHead from '../components/document_head';
 import MinNavbar from '../components/min_navbar';
-import { getAllBrazilStates } from '@common/getBrazilStates';
 
 
 export interface SignUpProps {
@@ -92,7 +92,7 @@ export default function Register(props: RegisterProps): ReactElement {
 	const handleSignUp = async (data: SignUpProps): Promise<void> => {
 		const registered = await signUp(data);
 		handleToasts(registered);
-	}
+	};
 
 	function stateOptionsRender({ stateList }: RegisterProps) {
 		return stateList.map(
@@ -234,8 +234,8 @@ export async function getStaticProps(_context: EndpointInterface): Promise<PageP
 		name: state.nome,
 	}));
 
-	const orderedStatelist = statesList.sort((a, b) => {
-		return a.id - b.id;
+	const orderedStatelist = statesList.sort((s1, s2) => {
+		return s1.id - s2.id;
 	});
 
 	return {

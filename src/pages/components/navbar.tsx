@@ -51,13 +51,13 @@ function MenuDrawer(_props: any): ReactElement {
 					</DrawerHeader>
 
 					<DrawerBody boxSize='xs' background={boxBgColor}>
-						<Link href='https://api.nasa.gov/' passHref>
+						<Link href='https://github.com/AlvaroDavi5' passHref>
 							<Button
 								size='lg'
 								boxShadow='1px 1px 2px 2px rgba(0, 0, 0, 0.3)'
 								variant='mw_button'
 							>
-								API
+								Author
 							</Button>
 						</Link>
 					</DrawerBody>
@@ -96,7 +96,7 @@ export default function Navbar(props: NavbarProps): JSX.Element {
 			<div
 				className='logo'
 			>
-				<Link href='https://github.com/AlvaroDavi5' passHref
+				<Link href='/' passHref
 				>
 					<IconButton
 						aria-label='GitHub'

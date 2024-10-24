@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import Head from 'next/head';
 
 
@@ -5,7 +6,7 @@ interface HeadProps {
 	title?: string,
 }
 
-export default function DocumentHead(props: HeadProps) {
+export default function DocumentHead(props: HeadProps): ReactElement {
 	return (
 		<Head>
 			<title>{`${props.title} - Boilerplate`}</title>

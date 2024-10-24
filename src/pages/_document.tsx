@@ -1,8 +1,9 @@
+import { ReactElement } from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 
 export default class RootDocument extends Document {
-	render() {
+	render(): ReactElement {
 		return (
 			<Html lang='en'>
 				<Head>

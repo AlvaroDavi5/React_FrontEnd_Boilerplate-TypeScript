@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import {
 	useColorModeValue,
@@ -19,7 +19,7 @@ import { saveToken } from '@common/cookies';
 import { validateTokenAsync } from '@common/token';
 
 
-export default function Login() {
+export default function Login(): ReactElement {
 	const { isAuthenticated, setIsAuthenticated, setAuthUser } = useContext(AuthContext);
 	const router = useRouter();
 	const toast = useToast();
@@ -43,7 +43,7 @@ export default function Login() {
 
 		if (success) {
 			toast({
-				status: successToast.status as any,
+				status: 'success',
 				title: successToast.title,
 				description: successToast.description,
 				duration: 1500,
@@ -51,7 +51,7 @@ export default function Login() {
 			});
 		} else {
 			toast({
-				status: errorToast.status as any,
+				status: 'error',
 				title: errorToast.title,
 				description: errorToast.description,
 				duration: 1500,
