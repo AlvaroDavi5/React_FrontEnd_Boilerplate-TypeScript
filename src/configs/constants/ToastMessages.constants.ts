@@ -1,20 +1,29 @@
 
 export default class ToastMessagesConstants {
+	public readonly warningToast = {
+		title: 'Oops!',
+		description: 'Algo inesperado aconteceu, por favor, tente novamente dentro de alguns instantes!',
+	};
+
 	public readonly loginToasts = {
 		success: {
-			status: 'success',
 			title: 'Login realizado com sucesso',
 			description: 'Tudo certo! Aguarde enquanto carregamos seu espaço de trabalho...',
 		},
 		error: {
-			status: 'error',
 			title: 'Login ou senha incorretos',
 			description: 'Por favor, verifique suas credenciais e tente novamente.',
 		},
-		warning: {
-			status: 'warning',
-			title: 'Oops!',
-			description: 'Algo inesperado aconteceu, por favor, tente novamente dentro de alguns instantes!',
+	};
+
+	public readonly registerToasts = {
+		success: {
+			title: 'Usuário cadastrado com sucesso.',
+			description: 'Volte à tela de login e insira suas credenciais para acessar.',
+		},
+		error: {
+			title: 'Erro ao cadastrar usuário!',
+			description: 'Por favor, verifique seus dados e tente novamente.',
 		},
 	};
 }
