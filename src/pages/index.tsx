@@ -1,8 +1,8 @@
 import { useContext, useEffect, ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import { getToken } from '@common/cookies';
-import { AuthContext } from './auth/AuthContext';
-import Login from './auth/login';
+import { AuthContext } from '@pages/auth/AuthContext';
+import Login from '@pages/auth/login';
 
 
 export default function AppIndex(): ReactElement {

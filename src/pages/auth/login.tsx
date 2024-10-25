@@ -37,6 +37,7 @@ export default function Login(): ReactElement {
 	const colorMode = useColorModeValue('light', 'dark');
 	const pageBgColor = (colorMode === 'light' ? 'clear_lake' : 'dark_forest');
 	const boxBgColor = (colorMode === 'light' ? 'marine' : 'primary');
+	const textColor = (colorMode === 'light' ? 'light-text' : 'dark-text');
 
 	const handleToasts = (success: boolean): void => {
 		const { loginToasts: { success: successToast, error: errorToast } } = new ToastMessagesConstants();
@@ -127,7 +128,7 @@ export default function Login(): ReactElement {
 											<Input
 												type='email' {...register('email')} isRequired={true}
 												placeholder='Ex: nome.sobrenome@gmail.com' _placeholder={{ color: 'gray.500' }}
-												color='black' maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
+												color={textColor} maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
 											/>
 										</InputGroup>
 										<Link href='/auth/register' passHref>
@@ -149,7 +150,7 @@ export default function Login(): ReactElement {
 											<Input
 												type={showPass ? 'text' : 'password'} {...register('password')} isRequired={true}
 												placeholder='Jamais compartilhe sua senha!' _placeholder={{ color: 'gray.500' }}
-												color='black' maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
+												color={textColor} maxHeight={['70px', '90px']} maxWidth={['90%', '40vw']} background='green.100'
 											/>
 											<InputRightElement width='72px' display={['none', 'flex']}>
 												<Button onClick={handleShowPass} h='28px' size='sm' background='green.100'>

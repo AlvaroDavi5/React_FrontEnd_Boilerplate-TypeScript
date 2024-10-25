@@ -7,7 +7,7 @@ const dark = {
 		secondary: '#03652e',
 
 		background: '#015249',
-		text: '#000000'
+		text: '#000000',
 	}
 };
 const light = {
@@ -18,7 +18,7 @@ const light = {
 		secondary: '#77c9d4',
 
 		background: '#aef0d1',
-		text: '#ffffff'
+		text: '#ffffff',
 	}
 };
 
@@ -35,7 +35,9 @@ const colors = {
 	success: '#2ddf00',
 	danger: '#e60e0e',
 	alert: '#e9bd09',
-	calm: '#0a9ef3'
+	calm: '#0a9ef3',
+	'dark-text': '#313131',
+	'light-text': '#000000',
 };
 
 export { colors };

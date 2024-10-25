@@ -46,6 +46,7 @@ export default function Register(props: RegisterProps): ReactElement {
 	const colorMode = useColorModeValue('light', 'dark');
 	const pageBgColor = (colorMode === 'light' ? 'clear_lake' : 'dark_forest');
 	const boxBgColor = (colorMode === 'light' ? 'marine' : 'primary');
+	const textColor = (colorMode === 'light' ? 'light-text' : 'dark-text');
 
 	const handleToasts = (success: boolean): void => {
 		const { registerToasts: { success: successToast, error: errorToast } } = new ToastMessagesConstants();
@@ -94,7 +95,7 @@ export default function Register(props: RegisterProps): ReactElement {
 		handleToasts(registered);
 	};
 
-	function stateOptionsRender({ stateList }: RegisterProps) {
+	function stateOptionsRender({ stateList }: RegisterProps): ReactElement[] {
 		return stateList.map(
 			(state) => {
 				return (
@@ -137,8 +138,8 @@ export default function Register(props: RegisterProps): ReactElement {
 											<FormLabel htmlFor='username' marginLeft='10px'>Nome de Usuário:</FormLabel>
 											<Input
 												type='text' {...register('username')}
-												placeholder='Ex: meuApelido123@'
-												maxWidth='27vw' background='green.100'
+												placeholder='Ex: meuApelido123@' _placeholder={{ color: 'gray.500' }}
+												color={textColor} maxWidth='27vw' background='green.100'
 											/>
 											<FormHelperText fontWeight='bold' maxWidth='27vw'>
 												Use letras maiúsculas, minúsculas, números e símbolos
@@ -148,8 +149,8 @@ export default function Register(props: RegisterProps): ReactElement {
 											<FormLabel htmlFor='email' marginLeft='10px'>e-Mail:</FormLabel>
 											<Input
 												type='email' {...register('email')}
-												placeholder='Ex: nome.sobrenome@gmail.com'
-												maxWidth='27vw' background='green.100'
+												placeholder='Ex: nome.sobrenome@gmail.com' _placeholder={{ color: 'gray.500' }}
+												color={textColor} maxWidth='27vw' background='green.100'
 											/>
 										</Box>
 										<Box id='register-pass' margin='10px 40px'>
@@ -157,12 +158,12 @@ export default function Register(props: RegisterProps): ReactElement {
 											<InputGroup>
 												<Input
 													type={showPass ? 'text' : 'password'} {...register('password')}
-													placeholder='Jamais compartilhe sua senha!'
-													maxLength={18} maxWidth='27vw' background='green.100'
+													placeholder='Jamais compartilhe sua senha!' _placeholder={{ color: 'gray.500' }}
+													color={textColor} maxLength={18} maxWidth='27vw' background='green.100'
 												/>
 												<InputRightElement width='72px'>
 													<Button onClick={handleShowPass} h='28px' size='sm' background='green.100'>
-														{showPass ? <FaEyeSlash size='20' /> : <FaEye size='20' />}
+														{showPass ? <FaEyeSlash size='20' color='black' /> : <FaEye size='20' color='black' />}
 													</Button>
 												</InputRightElement>
 											</InputGroup>
@@ -183,7 +184,7 @@ export default function Register(props: RegisterProps): ReactElement {
 											<FormLabel htmlFor='uf-estado' marginLeft='10px'>Estado:</FormLabel>
 											<Select
 												placeholder='Selecione um Estado' {...register('state')}
-												minWidth='230px' background='green.100'
+												color={textColor} minWidth='230px' background='green.100'
 											>
 												{stateOptionsRender(props)}
 											</Select>
