@@ -1,6 +1,10 @@
 import { useContext, useEffect, ReactElement } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Button, Flex, IconButton, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Textarea, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import {
+	Box, Flex, Button, IconButton, Input, Textarea,
+	Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay,
+	useColorModeValue, useDisclosure,
+} from '@chakra-ui/react';
 import { IoCreateOutline } from 'react-icons/io5';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { getToken } from '@common/cookies';
@@ -27,10 +31,16 @@ function TaskEditorModal(props: any): ReactElement {
 				<ModalCloseButton />
 
 				<ModalBody>
-					<Input type='text' color={textColor} maxLength={95} placeholder='Nome da tarefa' _placeholder={{ color: 'gray.500' }} maxWidth='95%' marginTop='20px' marginLeft='10px' marginRight='10px' background='green.100' /><br />
-					<Input type='date' color={textColor} maxWidth='14vw' marginTop='20px' marginLeft='10%' background='green.100' />
-					<Input type='time' color={textColor} maxWidth='9vw' marginTop='20px' marginLeft='10%' background='green.100' />
-					<Textarea color={textColor} maxLength={350} placeholder='Descrição da tarefa' _placeholder={{ color: 'gray.500' }} marginTop='20px' background='green.100' />
+					<Input type='text' placeholder='Nome da tarefa' _placeholder={{ color: 'gray.500' }}
+						color={textColor} maxLength={95} maxWidth='95%' marginTop='20px' marginLeft='10px' marginRight='10px' background='green.100' />
+					<br />
+					<Input type='date'
+						color={textColor} maxWidth='14vw' marginTop='20px' marginLeft='10%' background='green.100' />
+					<Input type='time'
+						color={textColor} maxWidth='9vw' marginTop='20px' marginLeft='10%' background='green.100' />
+					<Textarea placeholder='Descrição da tarefa' _placeholder={{ color: 'gray.500' }}
+						color={textColor} maxLength={350}
+						marginTop='20px' background='green.100' />
 				</ModalBody>
 
 				<ModalFooter>
