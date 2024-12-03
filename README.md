@@ -42,7 +42,7 @@ yarn install
 
 1. Copy dotenv file  
 ```shell
-cp envs/.env.local ./.env # copy development local example
+cp .env.local ./.env # copy development local example
 source ./.env # load envs on shell session
 ```
 
