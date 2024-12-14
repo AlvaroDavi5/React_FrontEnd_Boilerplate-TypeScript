@@ -138,10 +138,7 @@
 			"error",
 			"never"
 		],
-		"func-call-spacing": [
-			"error",
-			"never"
-		],
+		"func-call-spacing": "off",
 		"yield-star-spacing": [
 			"error",
 			{
@@ -337,7 +334,10 @@
 				"@typescript-eslint"
 			],
 			"rules": {
+				"security/detect-possible-timing-attacks": "error",
 				"security/detect-object-injection": "error",
+				"security/detect-non-literal-fs-filename": "warn",
+				"security/detect-non-literal-regexp": "warn",
 				"import/order": [
 					"error",
 					{
@@ -510,7 +510,8 @@
 		},
 		{
 			"rules": {
-				"no-console": "off"
+				"no-console": "off",
+				"@typescript-eslint/no-explicit-any": "off"
 			},
 			"files": [
 				"src/dev/**",
