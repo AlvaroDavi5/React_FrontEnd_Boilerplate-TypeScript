@@ -8,10 +8,15 @@ export interface SignInProps {
 	password: string,
 }
 
-export const AuthContext = createContext<{
+interface IAuthContext {
 	isAuthenticated: boolean, setIsAuthenticated: (input: boolean) => void,
-	authUser?: UserAuthInterface, setAuthUser: (input: UserAuthInterface) => void
-}>({ isAuthenticated: false, setIsAuthenticated: () => { console.debug('not is authenticated'); }, setAuthUser: () => { console.debug('not authUser'); } });
+	authUser?: UserAuthInterface, setAuthUser: (input: UserAuthInterface) => void,
+}
+export const AuthContext = createContext<IAuthContext>({
+	isAuthenticated: false,
+	setIsAuthenticated: () => { console.debug('not is authenticated'); },
+	setAuthUser: () => { console.debug('not authUser'); },
+});
 
 export default function AuthProvider({ children }: { children: ReactElement }): ReactElement {
 	const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
