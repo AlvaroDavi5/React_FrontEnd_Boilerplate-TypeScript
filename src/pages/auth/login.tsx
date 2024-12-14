@@ -10,13 +10,13 @@ import {
 	useToast
 } from '@chakra-ui/react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import DocumentHead from '@pages/components/document_head';
-import MinNavbar from '@pages/components/min_navbar';
-import { AuthContext, SignInProps } from '@pages/auth/AuthContext';
+import DocumentHead from '@components/document_head';
+import MinNavbar from '@components/min_navbar';
+import { AuthContext, SignInProps } from 'src/contexts/AuthContext';
 import ToastMessagesConstants from '@configs/constants/ToastMessages.constants';
 import axios from 'axios';
-import { saveToken } from '@common/cookies';
-import { validateTokenAsync } from '@common/token';
+import { validateTokenAsync } from '@common/helpers/token.helper';
+import { saveToken } from '@common/helpers/cookies.helper';
 
 
 export default function Login(): ReactElement {

@@ -11,9 +11,9 @@ import { FaEye, FaEyeSlash, FaUserCircle } from 'react-icons/fa';
 import axios from 'axios';
 import { EndpointInterface, PagePropsInterface } from '@shared/internal/interfaces/nextRoutesInterface';
 import ToastMessagesConstants from '@configs/constants/ToastMessages.constants';
-import { getAllBrazilStates } from '@common/getBrazilStates';
-import DocumentHead from '../components/document_head';
-import MinNavbar from '../components/min_navbar';
+import { getAllBrazilStates } from '@common/utils/getBrazilStates.util';
+import DocumentHead from '../../components/document_head';
+import MinNavbar from '../../components/min_navbar';
 
 
 export interface SignUpProps {

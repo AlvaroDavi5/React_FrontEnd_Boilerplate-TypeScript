@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react';
 import theme from '@configs/layout/themes';
-import AuthProvider from '@pages/auth/AuthContext';
+import AuthProvider from 'src/contexts/AuthContext';
 import type { AppProps } from 'next/app';
 import './styles/globals.css';
 

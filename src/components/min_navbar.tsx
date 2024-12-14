@@ -9,7 +9,7 @@ import { BiSun, BiMoon } from 'react-icons/bi';
 import { DiGithubBadge } from 'react-icons/di';
 
 
-export default function MinNavbar(props: any): ReactElement {
+export default function MinNavbar(props: { pageName: string }): ReactElement {
 	const { colorMode, toggleColorMode } = useColorMode();
 	const boxBgColor = (colorMode === 'light' ? 'marine' : 'primary');
 	const textColor = (colorMode === 'light' ? 'white' : 'black');

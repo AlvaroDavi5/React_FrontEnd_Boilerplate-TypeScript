@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { encodeJwtAsync } from '@common/token';
+import { encodeJwtAsync } from '@common/helpers/token.helper';
 
 
 export default {

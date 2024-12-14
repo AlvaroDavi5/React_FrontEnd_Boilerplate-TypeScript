@@ -9,13 +9,9 @@ export interface SignInProps {
 }
 
 export const AuthContext = createContext<{
-	isAuthenticated: boolean, setIsAuthenticated:(input: boolean) => void,
+	isAuthenticated: boolean, setIsAuthenticated: (input: boolean) => void,
 	authUser?: UserAuthInterface, setAuthUser: (input: UserAuthInterface) => void
-		}>({
-			isAuthenticated: false,
-			setIsAuthenticated: () => { console.debug('not is authenticated'); },
-			setAuthUser: () => { console.debug('not authUser'); },
-		});
+}>({ isAuthenticated: false, setIsAuthenticated: () => { console.debug('not is authenticated'); }, setAuthUser: () => { console.debug('not authUser'); } });
 
 export default function AuthProvider({ children }: { children: ReactElement }): ReactElement {
 	const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -30,6 +26,6 @@ export default function AuthProvider({ children }: { children: ReactElement }): 
 
 export async function getServerSideProps(context: EndpointInterface): Promise<PagePropsInterface> {
 	return {
-		context: context,
+		context,
 	};
 }

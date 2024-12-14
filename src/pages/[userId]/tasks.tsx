@@ -7,10 +7,10 @@ import {
 } from '@chakra-ui/react';
 import { IoCreateOutline } from 'react-icons/io5';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
-import { getToken } from '@common/cookies';
-import { AuthContext } from '@pages/auth/AuthContext';
-import DocumentHead from '@pages/components/document_head';
-import Navbar from '@pages/components/navbar';
+import { getToken } from '@common/helpers/cookies.helper';
+import { AuthContext } from 'src/contexts/AuthContext';
+import DocumentHead from '@components/document_head';
+import Navbar from '@components/navbar';
 
 
 function TaskEditorModal(props: any): ReactElement {

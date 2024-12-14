@@ -1,10 +1,10 @@
 import { useContext, useEffect, ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import { Flex, useColorModeValue } from '@chakra-ui/react';
-import { getToken } from '@common/cookies';
-import { AuthContext } from '@pages/auth/AuthContext';
-import DocumentHead from '@pages/components/document_head';
-import Navbar from '@pages/components/navbar';
+import { getToken } from '@common/helpers/cookies.helper';
+import { AuthContext } from 'src/contexts/AuthContext';
+import DocumentHead from '@components/document_head';
+import Navbar from '@components/navbar';
 
 
 export default function Projects(): ReactElement {

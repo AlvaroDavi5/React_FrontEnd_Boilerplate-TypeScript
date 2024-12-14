@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react';
 
 
-export default function ServiceTherms(props: any): ReactElement {
+export default function ServiceTherms(props: { author?: string }): ReactElement {
 	const [authorName, setAuthorName] = useState(props.author);
 
 	const onClick = () => {

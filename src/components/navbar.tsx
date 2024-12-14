@@ -13,7 +13,7 @@ import { BiSun, BiMoon } from 'react-icons/bi';
 import { DiGithubBadge } from 'react-icons/di';
 
 
-function MenuDrawer(_props: any): ReactElement {
+function MenuDrawer(_props: unknown): ReactElement {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const btnRef = useRef<any>();
 	const colorMode = useColorModeValue('light', 'dark');

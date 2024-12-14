@@ -1,7 +1,7 @@
 import { useContext, useEffect, ReactElement } from 'react';
 import { useRouter } from 'next/router';
-import { getToken } from '@common/cookies';
-import { AuthContext } from '@pages/auth/AuthContext';
+import { getToken } from '@common/helpers/cookies.helper';
+import { AuthContext } from 'src/contexts/AuthContext';
 import Login from '@pages/auth/login';
 
 
