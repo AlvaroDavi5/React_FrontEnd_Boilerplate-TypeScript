@@ -38,10 +38,10 @@ const buttonStyles = {
 const theme = extendTheme(
 	{
 		useSystemColorMode: true,
-		//initialColorMode: 'light',
-		colors: colors,
+		// initialColorMode: 'light',
+		colors,
 		fonts,
-		breakpoints: breakpoints,
+		breakpoints,
 		components: {
 			Button: buttonStyles,
 		},

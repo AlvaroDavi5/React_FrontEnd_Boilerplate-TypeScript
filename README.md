@@ -63,11 +63,12 @@ ___
 
 ### TO DO
 
-[React.js](https://react.dev/reference/react)
-[Next.js](https://nextjs.org/docs)
-- **Style**
-	- [ ] Separate states, effects, contexts, consts, render/return
 - **Concepts**
+	* Application State
+		- [ ] Redux
+		- [ ] Context API
+		- [ ] Fetch API
+	- [ ] UseState, UseEffect, UseContext
 	* Rendering
 		- [ ] Static Site Generation
 		- [ ] Client-Side Rendering
