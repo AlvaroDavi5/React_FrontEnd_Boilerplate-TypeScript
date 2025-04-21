@@ -2,6 +2,6 @@
 
 . "$(dirname "$0")/_/husky.sh"
 
-yarn run build
-yarn run security-check
-yarn run test
+npm run build
+npm run security-check
+npm run test

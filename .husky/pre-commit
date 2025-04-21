@@ -2,5 +2,5 @@
 
 . "$(dirname "$0")/_/husky.sh"
 
-yarn run typecheck
-yarn run lint:fix
+npm run typecheck
+npm run lint:fix

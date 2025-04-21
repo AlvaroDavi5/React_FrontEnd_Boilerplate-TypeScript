@@ -27,7 +27,7 @@ Node.js Boilerplate for Front-End using TypeScript and Next.js (React.js).
 
 1. Install project dependencies  
 ```shell
-yarn install
+npm install
 ```
 
 #### What to do if the service goes down
@@ -49,8 +49,8 @@ source ./.env # load envs on shell session
 ## Running Locally
 
 ```shell
-yarn run mock-dependencies # start external service mock
-yarn run start:dev # start application in development mode
+npm run mock-dependencies # start external service mock
+npm run start:dev # start application in development mode
 ```
 
 ## Interface
@@ -63,6 +63,8 @@ ___
 
 ### TO DO
 
+- [ ] Remove Next
+- [ ] Update Launch Settings
 - **Concepts**
 	* Application State
 		- [ ] Redux
@@ -87,7 +89,7 @@ ___
 		- [ ] Scroller
 	* Actions
 		- [ ] Validations
-		- [ ] Requests (Http & GraphQl)
+		- [ ] Requests (Http)
 		- [ ] Connections (WebSockets)
 		- [ ] Hooks
 - **Tests**
