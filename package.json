@@ -5,9 +5,9 @@
 	"description": "React Boilerplate for Front-End using TypeScript",
 	"license": "MIT",
 	"private": false,
-	"author": "Álvaro Davi Santos Alves <alvaro.davisa@gmail.com>",
+	"author": "Álvaro Davi Santos Alves <alvaro-davi1@hotmail.com>",
 	"contributors": [
-		"Álvaro Davi Santos Alves <alvaro.davisa@gmail.com>"
+		"Álvaro Davi Santos Alves <alvaro-davi1@hotmail.com>"
 	],
 	"repository": "https://github.com/AlvaroDavi5/React_FrontEnd_Boilerplate-TypeScript.git",
 	"main": "./src/pages/index.tsx",
